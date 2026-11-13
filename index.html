@@ -750,11 +750,18 @@ if (CONFIG.download) {
 /* Barra de progresso + nav ativa */
 const barra = document.getElementById('barra');
 ScrollTrigger.create({ start: 0, end: 'max', onUpdate: s => barra.style.width = (s.progress * 100) + '%' });
-function navAtiva() { document.querySelectorAll('.nav .links a').forEach(a => {
-  ScrollTrigger.create({ trigger: a.getAttribute('href'), endTrigger: a.getAttribute('href') === '#aplicacoes' ? '#posts' : a.getAttribute('href'),
-    start: 'top 50%', end: 'bottom 50%',
-    onToggle: s => a.classList.toggle('ativo', s.isActive), onRefresh: s => a.classList.toggle('ativo', s.isActive) });
-}); }
+// Menu: acende só a seção que está no meio da tela (medido a cada rolagem)
+function navAtiva() {
+  const links = [...document.querySelectorAll('.nav .links a')];
+  const alvos = links.map(a => (a.hash === '#aplicacoes' ? ['#aplicacoes', '#posts'] : [a.hash]).map(s => document.querySelector(s)));
+  const marca = () => {
+    const meio = innerHeight / 2; let atual = -1;
+    alvos.forEach((els, i) => els.forEach(el => { const r = el.getBoundingClientRect(); if (r.top <= meio && r.bottom > meio) atual = i; }));
+    links.forEach((a, i) => a.classList.toggle('ativo', i === atual));
+  };
+  addEventListener('scroll', marca, { passive: true }); addEventListener('resize', marca);
+  ScrollTrigger.addEventListener('refresh', marca); marca();
+}
 
 await document.fonts.load('400 62px Grandis');
 await document.fonts.load('400 300px "Addington CF"');
