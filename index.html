@@ -1,0 +1,1037 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>L'Essence Clinic · Identidade Visual</title>
+<style>
+@font-face{font-family:"Addington CF";src:url(fonts/addington-300.woff2) format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Addington CF";src:url(fonts/addington-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Addington CF";src:url(fonts/addington-300i.woff2) format("woff2");font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:"Addington CF";src:url(fonts/addington-400i.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Grandis";src:url(fonts/grandis-300.woff2) format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Grandis";src:url(fonts/grandis-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Grandis";src:url(fonts/grandis-500.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+
+/* ====== TOKENS DA MARCA ====== */
+:root{
+  --grafite:#2C2A2A; --terracota:#B57D67; --pessego:#D7A994; --nude:#E6DCD2;
+  --off:#F6F0EA; --areia:#C9B3A1; --cacau:#5B4038; --argila:#8E5A4A;
+  --linha:rgba(91,64,56,.16);
+  --serif:"Addington CF",Georgia,serif; --sans:"Grandis",system-ui,sans-serif;
+  --lado:max(18px,(100vw - 1240px)/2);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--off);color:var(--grafite);font-family:var(--sans);font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+svg{display:block}
+.wrap{width:min(1240px,100% - 36px);margin-inline:auto}
+.rotulo{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--argila);display:flex;gap:12px;align-items:center}
+.rotulo b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:18px;letter-spacing:0;text-transform:none;color:var(--terracota)}
+.rotulo.claro{color:var(--pessego)}
+.titulo{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5.2vw,76px);line-height:1.02;letter-spacing:-.015em}
+.titulo em{font-style:italic;color:var(--terracota)}
+.texto{font-size:clamp(15px,1.1vw,17px);line-height:1.65;color:var(--cacau);max-width:460px;font-weight:300}
+.cab{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+
+/* ====== NAV ====== */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:4px;padding:6px 6px 6px 12px;border-radius:99px;background:rgba(246,240,234,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--linha);box-shadow:0 8px 30px rgba(91,64,56,.08);max-width:calc(100vw - 24px)}
+.nav .mini{width:24px;height:24px;margin-right:8px;flex:none;color:var(--terracota)}
+.nav a{font-size:12px;text-decoration:none;padding:8px 12px;border-radius:99px;color:var(--grafite);white-space:nowrap;transition:background .25s,color .25s;letter-spacing:.02em}
+.nav a:hover,.nav a.ativo{background:var(--grafite);color:var(--off)}
+.nav .baixar{background:var(--argila);color:var(--off)}
+.nav .links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0}
+.nav .links::-webkit-scrollbar{display:none}
+.barra{position:fixed;top:0;left:0;height:3px;background:var(--terracota);width:0;z-index:60}
+
+/* ====== 00 ABERTURA ====== */
+#abertura{height:400vh;position:relative}
+#abertura .fixo{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;place-items:center;background:var(--off)}
+.capa-foto{position:absolute;inset:0;background:#3a2f2b url(assets/foto2.webp) center 45%/cover;clip-path:circle(0% at 50% 46%);will-change:clip-path}
+.capa-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(44,42,42,.28),rgba(44,42,42,.58))}
+.hero-logo{position:relative;z-index:2;width:min(560px,80vw);color:var(--grafite);margin-top:-4vh}
+.hero-logo svg{width:100%;height:auto;overflow:visible}
+.dica{position:absolute;z-index:3;bottom:15vh;left:0;right:0;text-align:center;font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--cacau);opacity:0}
+.hero-base{position:absolute;z-index:3;bottom:30px;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:0 32px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--cacau)}
+.rola{display:flex;align-items:center;gap:10px}
+.rola i{width:1px;height:28px;background:currentColor;display:block;animation:pulsa 1.8s infinite}
+@keyframes pulsa{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ====== 01 CONCEITO ====== */
+#conceito{height:300vh;position:relative;background:var(--off)}
+#conceito .fixo{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:6vw;padding:70px var(--lado) 0}
+.palco-l{position:relative;aspect-ratio:1;width:min(100%,62vh);justify-self:center;border-radius:6px;background:var(--nude);display:grid;place-items:center;overflow:hidden}
+.palco-l .fundo-escuro{position:absolute;inset:0;background:var(--grafite);clip-path:circle(0% at 50% 50%)}
+.palco-l .gira{position:relative;width:64%;aspect-ratio:1}
+.palco-l .gira svg{position:absolute;inset:0;width:100%;height:100%;color:var(--terracota)}
+.palco-l .flor{color:var(--pessego);opacity:0}
+.palco-l .grau{position:absolute;left:18px;top:16px;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--terracota)}
+.passos{display:grid;gap:22px;margin-top:34px}
+.passo{opacity:.28;transition:opacity .4s;border-left:1px solid var(--areia);padding-left:18px}
+.passo.on{opacity:1;border-color:var(--terracota)}
+.passo h4{font-family:var(--serif);font-weight:400;font-size:22px;margin-bottom:2px}
+.passo p{font-size:14px;color:var(--cacau);line-height:1.55;font-weight:300}
+
+/* ====== 02 MARCA ====== */
+#marca{height:280vh;position:relative;background:var(--nude)}
+#marca .fixo{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:1fr 1.35fr;align-items:center;gap:40px;padding:70px var(--lado) 0}
+.construcao svg{width:100%;overflow:visible;color:var(--grafite)}
+.guia{stroke:var(--cacau);stroke-width:1;stroke-dasharray:5 5;fill:none;opacity:.5}
+.guia-c{stroke:var(--terracota);stroke-width:1.4;fill:none}
+.cota{font-family:var(--sans);font-size:20px;fill:var(--argila);letter-spacing:.2em}
+
+/* ====== 03 VERSÕES ====== */
+#versoes{padding:20vh 0 12vh;background:var(--off)}
+.grade{display:grid;grid-template-columns:repeat(4,1fr);border-radius:6px;overflow:hidden}
+.cell{display:flex;align-items:center;justify-content:center;padding:40px;min-height:250px;clip-path:inset(100% 0 0 0)}
+.cell svg{width:100%;height:auto}
+.c-terra{background:var(--terracota);color:var(--off);grid-column:span 2}
+.c-graf{background:var(--grafite);color:var(--pessego)}
+.c-foto{background:url(assets/foto4.webp) center 30%/cover;grid-row:span 2;min-height:500px}
+.c-off{background:#fff;color:var(--grafite);grid-column:span 2}
+.c-neg{background:var(--grafite);color:var(--off)}
+.c-pad{grid-column:1/-1;min-height:200px;padding:0;background:var(--grafite);position:relative;overflow:hidden}
+.lgw{width:100%;max-width:340px} .icw{width:100%;max-width:120px}
+
+/* ====== 04 ASSINATURAS ====== */
+#assinaturas{padding:12vh 0 20vh;background:var(--off)}
+.assin-grid{display:grid;grid-template-columns:1.1fr 1.6fr 1fr;gap:16px}
+.tile{background:var(--nude);border-radius:6px;padding:44px 28px 22px;display:flex;flex-direction:column;justify-content:space-between;min-height:320px}
+.tile .art{flex:1;display:flex;align-items:center;justify-content:center;color:var(--grafite)}
+.tile .cap{font-size:11px;color:var(--cacau);margin-top:18px;letter-spacing:.24em;text-transform:uppercase}
+.medidas{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin-top:16px}
+.reducoes{background:#fff;border-radius:6px;padding:36px;display:flex;align-items:flex-end;gap:34px;flex-wrap:wrap}
+.reducoes figure{display:grid;justify-items:center;gap:10px;font-size:11px;color:var(--cacau);letter-spacing:.14em}
+.reducoes svg{color:var(--terracota)}
+.area{background:#fff;border-radius:6px;padding:36px;display:grid;gap:22px;justify-items:center;align-content:center}
+.area .box{position:relative;padding:38px}
+.area .box .moldura{position:absolute;inset:0;border:1px dashed var(--terracota);border-radius:2px}
+.area .box .respiro{position:absolute;inset:0;background:rgba(181,125,103,.12)}
+.area .box svg{position:relative;width:230px;aspect-ratio:950/590;color:var(--grafite)}
+.area .box .pet{position:absolute;width:38px;height:38px;color:var(--terracota)}
+.area p{font-size:14px;color:var(--cacau);max-width:46ch;text-align:center;font-weight:300}
+
+/* ====== 05 CORES ====== */
+#cores{position:relative;background:var(--off)}
+.pilha{height:360vh;position:relative}
+.pilha .fixo{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;padding:96px var(--lado) 4vh}
+.pilha .cab{margin-bottom:28px}
+.palco-c{position:relative;flex:1}
+.cartao{--aba:62px;position:absolute;left:0;right:0;top:calc(var(--i) * var(--aba));height:calc(100% - 3 * var(--aba));border-radius:10px;padding:20px 26px 24px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;box-shadow:0 -10px 40px rgba(44,42,42,.10);transform-origin:50% 0;will-change:transform}
+.cartao .topo{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.cartao .nome{font-family:var(--serif);font-size:clamp(24px,2.4vw,34px);line-height:1}
+.cartao .hex{font-size:13px;letter-spacing:.2em}
+.cartao .base{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;font-size:13px;font-weight:300}
+.cartao .uso{font-family:var(--serif);font-size:clamp(22px,2.6vw,40px);line-height:1.1;max-width:18ch}
+.cartao .cod{text-align:right;line-height:1.8;opacity:.85}
+.cartao .copiar{font-size:10px;letter-spacing:.2em;text-transform:uppercase;border:1px solid currentColor;border-radius:99px;padding:5px 10px;opacity:.7}
+.apoio-wrap{padding:6vh 0 20vh}
+.apoio{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.apoio .cor{min-height:150px;border-radius:8px;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;font-size:12px;cursor:pointer;clip-path:inset(100% 0 0 0 round 8px)}
+.apoio .cor b{font-family:var(--serif);font-weight:400;font-size:22px;display:block}
+.prop{margin-top:16px;display:flex;height:16px;border-radius:8px;overflow:hidden}
+.prop i{display:block;transform-origin:left}
+.prop-leg{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cacau);margin-top:10px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,30px);background:var(--grafite);color:var(--off);padding:12px 18px;border-radius:99px;font-size:13px;opacity:0;transition:.35s;z-index:80;pointer-events:none;letter-spacing:.06em}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ====== 06 TIPOGRAFIA ====== */
+#tipografia{background:var(--nude)}
+.letra{height:260vh;position:relative}
+.letra .fixo{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:1.25fr 1fr;align-items:center;gap:40px;padding:70px var(--lado) 0}
+.letra svg{width:100%;max-height:76vh;overflow:visible}
+.letra .contorno{font-family:var(--serif);font-weight:400;fill:none;stroke:var(--terracota);stroke-width:1.6}
+.letra .cheio{font-family:var(--serif);font-weight:400;fill:var(--terracota)}
+.letra .guia{stroke:var(--cacau)}
+.letra .cota{font-size:12px}
+.letra .ponto{fill:var(--off);stroke:var(--terracota);stroke-width:1.4}
+.fase{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--terracota);margin-top:28px;min-height:32px}
+.especime{padding:4vh 0 18vh}
+.familias{display:grid;grid-template-columns:1fr 1fr;border-radius:6px;overflow:hidden}
+.familias .col{padding:48px 44px;background:var(--off)}
+.familias .col+.col{background:#fff}
+.big-aa{font-family:var(--serif);font-size:clamp(110px,12vw,180px);line-height:.9;color:var(--terracota)}
+.big-aa.sans{font-family:var(--sans);font-weight:300;font-size:clamp(96px,10vw,150px);color:var(--grafite)}
+.familias h3{font-family:var(--serif);font-weight:400;font-size:28px;margin-top:14px}
+.abc{font-size:14px;letter-spacing:.06em;margin-top:12px;color:var(--cacau);font-weight:300;word-break:break-word}
+.pesos-l{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;border-top:1px solid var(--areia);padding-top:18px}
+.pesos-l span{font-size:28px}
+.pesos-l small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--cacau);font-style:normal;font-weight:400}
+.vivo{margin-top:16px;border-radius:6px;padding:28px;background:var(--grafite);color:var(--off)}
+.vivo-topo{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.vivo .rotulo{color:var(--areia)}
+.opcoes{display:flex;gap:6px;flex-wrap:wrap}
+.opcoes button{font-family:var(--sans);font-size:12px;letter-spacing:.06em;border:1px solid rgba(246,240,234,.25);background:transparent;color:var(--off);border-radius:99px;padding:8px 14px;cursor:pointer;transition:.25s}
+.opcoes button.on{background:var(--terracota);border-color:var(--terracota)}
+.opcoes .sep{width:1px;background:rgba(246,240,234,.2);margin:0 6px}
+.vivo-frase{font-family:var(--serif);font-weight:400;font-size:clamp(38px,6.4vw,96px);line-height:1.04;outline:none;transition:font-weight .2s}
+
+/* ====== 07 PADRÃO ====== */
+#padrao{padding:20vh 0;background:var(--off)}
+.pads{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px}
+.pad{border-radius:6px;overflow:hidden;min-height:400px;position:relative}
+.pad .campo{position:absolute;inset:0}
+.pad .campo svg{position:absolute}
+.pad .tag{position:absolute;left:16px;bottom:14px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:7px 12px;border-radius:20px;background:rgba(246,240,234,.92);color:var(--cacau);z-index:2}
+
+/* ====== 08 TOM ====== */
+#tom{background:var(--off);padding-bottom:20vh}
+.edit{display:grid;grid-template-columns:1fr 1fr;border-radius:6px;overflow:hidden}
+.edit .a{background:var(--nude);position:relative;overflow:hidden;min-height:460px}
+.edit .a svg.huge{position:absolute;width:150%;height:150%;left:-30%;top:-20%;color:#efe6dd}
+.edit .a .seal{position:absolute;right:30px;bottom:30px;width:140px;height:140px;border-radius:50%;background:var(--off);display:grid;place-items:center;box-shadow:0 6px 30px rgba(91,64,56,.12)}
+.edit .a .seal svg{width:60px;height:60px;color:var(--terracota)}
+.edit .b{background:var(--terracota);color:var(--off);display:flex;align-items:center;justify-content:center;min-height:460px;overflow:hidden}
+.edit .b .v{writing-mode:vertical-rl;font-size:13px;letter-spacing:.6em;text-transform:uppercase}
+.edit .c{background:url(assets/foto4.webp) center 25%/cover;min-height:500px}
+.edit .d{background:var(--grafite);color:var(--off);padding:56px;display:flex;flex-direction:column;justify-content:flex-end}
+.edit .d p{font-family:var(--serif);font-size:clamp(36px,4.2vw,60px);line-height:1.06}
+.edit .d p i{color:var(--pessego)}
+.edit .d .pal{display:inline-block;opacity:.12}
+.frases{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.frases div{background:var(--nude);border-radius:6px;padding:28px}
+.frases h5{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--argila);font-weight:400;margin-bottom:12px}
+.frases li{list-style:none;font-family:var(--serif);font-size:22px;line-height:1.35}
+.frases .nao li{color:var(--cacau);text-decoration:line-through;text-decoration-color:var(--terracota);text-decoration-thickness:1px}
+
+/* ====== 09 APLICAÇÕES ====== */
+#aplicacoes{background:var(--off);padding:20vh 0 6vh}
+.apl-grid{display:grid;grid-template-columns:7fr 5fr;gap:16px}
+.m-cartoes{background:#d9cdc2;border-radius:6px;min-height:460px;display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.4vw,18px);padding:40px 20px;perspective:1000px}
+.card{width:clamp(120px,13vw,180px);flex:none;aspect-ratio:1;border-radius:14px;box-shadow:0 18px 40px rgba(44,42,42,.22),0 2px 6px rgba(44,42,42,.12);display:flex;align-items:center;justify-content:center;position:relative}
+.card.f{background:var(--grafite);color:var(--off);flex-direction:column;gap:14px}
+.card.f .fi svg{width:56px;height:56px;color:var(--pessego)}
+.card.f .fn svg{width:104px;aspect-ratio:935/154;color:var(--off)}
+.card.v{background:var(--off);justify-content:flex-start;padding:16px;align-items:flex-end}
+.card.v .info{font-size:8.6px;line-height:1.65;color:var(--cacau)}
+.card.v .info b{display:block;font-family:var(--serif);font-size:16px;font-weight:400;color:var(--grafite);line-height:1.2;margin-bottom:6px}
+.card.v .ic{position:absolute;right:16px;top:16px;width:28px;height:28px;color:var(--terracota)}
+.m-parede{position:relative;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#e9dfd5,#d8cabd);min-height:460px;display:flex;align-items:center;justify-content:center}
+.m-parede svg{width:72%;aspect-ratio:950/590;color:var(--cacau);filter:drop-shadow(2px 3px 2px rgba(60,40,30,.35)) drop-shadow(-1px -1px 0 rgba(255,255,255,.5))}
+.m-parede .luz{position:absolute;inset:-20%;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.45) 50%,transparent 60%);transform:translateX(-80%);pointer-events:none}
+.legenda-m{position:absolute;left:16px;bottom:14px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--cacau)}
+
+/* posts em linha do tempo */
+#posts{position:relative;background:var(--off)}
+.posts-pin{height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding-top:50px}
+.posts-cab{padding:0 var(--lado);margin-bottom:5vh;display:flex;justify-content:space-between;align-items:end;gap:30px}
+.trilho{display:flex;gap:5vw;padding:0 var(--lado);width:max-content;will-change:transform}
+.painel{display:flex;gap:24px;align-items:flex-end}
+.painel .info{width:220px;padding-bottom:6px}
+.painel .num{font-family:var(--serif);font-style:italic;font-size:84px;line-height:.9;color:var(--terracota)}
+.painel h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.1;margin:10px 0 8px}
+.painel p{font-size:13px;color:var(--cacau);line-height:1.55;font-weight:300}
+.post{height:min(60vh,520px);aspect-ratio:4/5;border-radius:8px;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;box-shadow:0 30px 60px -24px rgba(44,42,42,.35)}
+.post .ic{position:absolute;top:22px;left:22px;width:30px;height:30px}
+.post h4{font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.6vw,38px);line-height:1.05;position:relative}
+.post small{font-size:10px;letter-spacing:.28em;text-transform:uppercase;opacity:.85;margin-top:12px;display:block;position:relative}
+.post .lst{font-size:14px;line-height:2;border-top:1px solid rgba(44,42,42,.15);padding-top:12px;margin-top:14px;font-weight:300}
+.p1{background:linear-gradient(180deg,rgba(44,42,42,0) 40%,rgba(44,42,42,.72)),url(assets/foto2.webp) center/cover;color:var(--off)}
+.p1 .ic{color:var(--off)}
+.p2{background:var(--terracota);color:var(--off)} .p2 .ic{color:var(--off)}
+.p2 .pt{position:absolute;inset:0;width:100%;height:100%;opacity:.18}
+.p3{background:var(--nude);color:var(--grafite)} .p3 .ic{color:var(--terracota)}
+.p4{background:var(--grafite);color:var(--off)} .p4 .ic{color:var(--pessego)}
+
+/* ====== 10 SITE ====== */
+#site{background:var(--nude);padding:20vh 0}
+.browser{border-radius:12px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(91,64,56,.45);background:#fff}
+.bar{height:36px;background:#ece5de;display:flex;align-items:center;gap:7px;padding:0 14px}
+.bar i{width:10px;height:10px;border-radius:50%;background:#d4c6b9;display:block}
+.bar span{margin-left:14px;font-size:11px;color:var(--cacau);background:#f6f0ea;padding:4px 14px;border-radius:12px}
+.snav{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:var(--off)}
+.snav svg{width:190px;height:36px;color:var(--grafite)}
+.snav ul{display:flex;gap:28px;list-style:none;font-size:12px;letter-spacing:.08em;color:var(--cacau)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 20px;border-radius:30px;background:var(--grafite);color:var(--off);text-decoration:none}
+.btn.terra{background:var(--argila)}
+.hero{position:relative;min-height:620px;background:url(assets/foto4.webp) right 25%/cover;display:grid;grid-template-columns:1.1fr 1fr;align-items:end}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(246,240,234,.96) 30%,rgba(246,240,234,.35) 62%,rgba(246,240,234,0))}
+.hero .txt{position:relative;padding:60px 40px 70px}
+.pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border-radius:30px;padding:6px 14px 6px 6px;box-shadow:0 6px 20px rgba(91,64,56,.12);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cacau)}
+.pill b{background:var(--nude);color:var(--grafite);border-radius:20px;padding:5px 10px;letter-spacing:.04em;font-weight:500}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,5.6vw,76px);line-height:.98;margin:22px 0 18px;color:var(--grafite)}
+.hero h1 em{color:var(--terracota)}
+.hero p{font-size:15px;color:var(--cacau);max-width:40ch;margin-bottom:26px;font-weight:300}
+.agenda{position:relative;margin:0 40px 40px auto;width:min(390px,100%);background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:22px;padding:18px;box-shadow:0 20px 50px rgba(44,42,42,.18)}
+.agenda .top{background:linear-gradient(135deg,var(--nude),#efd7c9);border-radius:16px;padding:16px 14px 14px;text-align:center}
+.agenda .mes{font-family:var(--serif);font-size:20px;margin-bottom:10px}
+.dias{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.dia{border:0;background:transparent;font-family:var(--sans);cursor:pointer;border-radius:12px;padding:6px 0;color:var(--cacau);font-size:10px;letter-spacing:.1em}
+.dia b{display:block;font-size:15px;font-weight:500;color:var(--grafite);letter-spacing:0;margin-top:3px}
+.dia.on{background:#fff;box-shadow:0 4px 12px rgba(91,64,56,.15)}
+.dia:disabled{opacity:.35;cursor:default}
+.sec{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--argila);margin:16px 4px 8px}
+.servs{display:flex;flex-direction:column;gap:8px}
+.serv{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid transparent;border-radius:14px;padding:10px 12px;cursor:pointer;text-align:left;font-family:var(--sans)}
+.serv .ico{width:34px;height:34px;border-radius:50%;background:var(--nude);display:grid;place-items:center;flex:none}
+.serv .ico svg{width:18px;height:18px;color:var(--terracota)}
+.serv b{font-family:var(--serif);font-weight:400;font-size:17px;display:block;color:var(--grafite);line-height:1.1}
+.serv small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--cacau)}
+.serv.on{border-color:var(--terracota)}
+.horas{display:flex;gap:6px;flex-wrap:wrap}
+.hora{border:1px solid var(--areia);background:transparent;border-radius:20px;padding:6px 12px;font-family:var(--sans);font-size:12px;color:var(--cacau);cursor:pointer}
+.hora.on{background:var(--grafite);color:var(--off);border-color:var(--grafite)}
+.wa{margin-top:14px;width:100%;justify-content:center}
+.wa-msg{font-size:11px;color:var(--cacau);margin-top:8px;text-align:center;min-height:16px}
+.faixa{display:grid;grid-template-columns:repeat(3,1fr);background:var(--nude)}
+.faixa div{padding:34px 40px;border-right:1px solid rgba(91,64,56,.12)}
+.faixa h5{font-family:var(--serif);font-weight:400;font-size:22px;margin-bottom:6px}
+.faixa p{font-size:13px;color:var(--cacau);font-weight:300}
+.fluxo{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.fluxo div{background:var(--off);border-radius:6px;padding:22px;font-size:13px;color:var(--cacau);font-weight:300}
+.fluxo b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:var(--grafite);margin-bottom:4px}
+
+/* ====== FIM ====== */
+#fim{min-height:100vh;background:var(--grafite);color:var(--off);display:grid;place-items:center;text-align:center;padding:16vh 16px;position:relative;overflow:hidden}
+#fim .flor-fim{width:110px;height:110px;margin:0 auto 34px;color:var(--pessego)}
+#fim .flor-fim svg{width:100%;height:100%;overflow:visible}
+#fim .grande{font-family:var(--serif);font-size:clamp(46px,7vw,110px);line-height:1;letter-spacing:-.01em}
+#fim .grande{min-height:1em}
+#fim .cursor{display:inline-block;width:.06em;height:.82em;background:var(--pessego);margin-left:.06em;vertical-align:-.04em;animation:pisca 1s steps(1) infinite}
+@keyframes pisca{50%{opacity:0}}
+#fim .assin{margin-top:28px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--areia)}
+#fim .botao{display:inline-block;margin-top:28px;background:var(--argila);color:var(--off);text-decoration:none;padding:14px 26px;border-radius:99px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.creditos{position:absolute;bottom:22px;left:0;right:0;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(246,240,234,.4)}
+
+/* ====== CELULAR ====== */
+@media (max-width:860px){
+  .nav .mini{display:none}
+  .nav{padding:5px;top:10px}
+  .nav a{padding:7px 10px;font-size:11px}
+  .cab{grid-template-columns:1fr;gap:14px;margin-bottom:34px}
+  .hero-base{padding:0 18px;font-size:9px}
+  #conceito .fixo,#marca .fixo,.letra .fixo{grid-template-columns:1fr;align-content:center;gap:22px;padding-top:76px}
+  #conceito .fixo .texto,#marca .fixo .texto,.letra .fixo .texto{display:none}
+  #conceito .titulo,#marca .titulo,.letra .titulo{font-size:34px}
+  .palco-l{width:min(100%,40vh)}
+  .passos{gap:10px;margin-top:14px}
+  .passo h4{font-size:18px}.passo p{font-size:12.5px}
+  .construcao{order:-1}
+  .letra svg{max-height:44vh}
+  .fase{margin-top:10px;font-size:20px}
+  .grade{grid-template-columns:1fr 1fr}.c-terra,.c-off{grid-column:span 2}.c-foto{grid-row:auto;min-height:280px}
+  .cell{min-height:180px;padding:26px}
+  .assin-grid,.medidas,.pads,.apoio,.fluxo,.familias,.frases,.apl-grid{grid-template-columns:1fr}
+  .apoio{grid-template-columns:1fr 1fr}
+  .tile{min-height:220px}
+  .medidas>*{min-width:0}
+  .reducoes,.area{padding:24px 18px}
+  .area .box{padding:26px}.area .box svg{width:180px}.area .box .pet{width:26px;height:26px}
+  .pilha .fixo{padding-top:74px}
+  .pilha .cab .texto{display:none}
+  .cartao{--aba:50px;padding:14px 18px 18px}
+  .cartao .copiar{display:none}
+  .familias .col{padding:34px 22px}
+  .pad{min-height:260px}
+  .edit{grid-template-columns:1fr}.edit .b{min-height:120px}.edit .b .v{writing-mode:horizontal-tb;letter-spacing:.4em}
+  .edit .a{min-height:320px}.edit .c{min-height:380px}.edit .d{padding:36px 24px}
+  .posts-pin{height:auto;padding:14vh 0 8vh}
+  .posts-cab{flex-direction:column;align-items:flex-start;gap:12px}
+  .trilho{flex-direction:column;width:auto;gap:56px}
+  .painel{flex-direction:column;align-items:flex-start}
+  .painel .info{width:100%}
+  .post{height:auto;width:100%}
+  .snav{padding:14px 18px}.snav ul{display:none}.snav svg{width:140px}
+  .hero{grid-template-columns:1fr}.hero::before{background:linear-gradient(180deg,rgba(246,240,234,.95) 40%,rgba(246,240,234,.6))}
+  .hero .txt{padding:36px 20px 10px}.agenda{margin:0 12px 20px}
+  .faixa{grid-template-columns:1fr}.faixa div{padding:22px 20px}
+  .m-cartoes{min-height:auto;flex-wrap:wrap;padding:30px 14px}
+  .card{width:44%}
+}
+@media (prefers-reduced-motion:reduce){ .rola i{animation:none} }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="icone" viewBox="130 130 547 547"><g fill="currentColor"><path d="M667.56,389.7c-4.59,63.79-63.67,117.07-127.47,107.32,12.58,25.48-.44,53.24-24.46,61.59,5.79-47.01-11.79-85.31-48.97-107.56-17.69-10.59-35.31-21.64-44.84-44.08,29.67,1.84,57.72,2.98,84.12-8.56l53.99-34.54c33.12-21.19,79.32-26.59,107.05,6.64-47.92-2.91-83.71,7.1-116.44,33.59-23.99,19.42-52.49,26.89-81.09,29.39,20.18,5.92,33.66,17.38,49.79,26.93,31.86,18.86,70.86,7.66,96.03-18.28C632.18,424.71,643.82,405.26,667.56,389.7Z"/><path d="M139.56,417.41c4.58-63.79,63.66-117.07,127.46-107.32-12.58-25.48.44-53.24,24.46-61.59-5.79,47.02,11.79,85.31,48.97,107.56,17.69,10.59,35.31,21.64,44.84,44.08-29.67-1.84-57.72-2.98-84.12,8.56l-53.99,34.54c-33.12,21.19-79.32,26.59-107.05-6.64,47.92,2.92,83.71-7.1,116.44-33.59,23.99-19.42,52.49-26.89,81.09-29.39-20.18-5.92-33.66-17.38-49.79-26.92-31.86-18.87-70.86-7.67-96.02,18.27C174.93,382.4,163.29,401.85,139.56,417.41Z"/><path d="M389.7,139.56c63.79,4.58,117.07,63.66,107.32,127.46,25.48-12.58,53.24.44,61.59,24.46-47.01-5.79-85.31,11.79-107.56,48.97-10.59,17.69-21.64,35.31-44.08,44.84,1.84-29.67,2.98-57.72-8.56-84.12l-34.54-53.99c-21.19-33.12-26.59-79.32,6.64-107.05-2.91,47.92,7.1,83.71,33.59,116.44,19.42,23.99,26.89,52.49,29.39,81.09,5.92-20.18,17.38-33.66,26.93-49.79,18.86-31.86,7.66-70.86-18.28-96.02C424.71,174.93,405.26,163.29,389.7,139.56Z"/><path d="M417.41,667.56c-63.79-4.59-117.07-63.67-107.32-127.47-25.48,12.58-53.24-.44-61.59-24.46,47.02,5.79,85.31-11.79,107.56-48.97,10.59-17.69,21.64-35.31,44.08-44.84-1.84,29.67-2.98,57.72,8.56,84.12l34.54,53.99c21.19,33.12,26.59,79.32-6.64,107.05,2.92-47.92-7.1-83.71-33.59-116.44-19.42-23.99-26.89-52.49-29.39-81.09-5.92,20.18-17.38,33.66-26.92,49.79-18.87,31.86-7.67,70.86,18.27,96.03C382.4,632.18,401.85,643.82,417.41,667.56Z"/></g></symbol>
+<symbol id="lform" viewBox="130 130 547 547"><g fill="currentColor"><path d="M548.42,567.47c-55.89-46.99-120.16-56.45-180.16-27.09-28.54,13.96-57.63,27.44-94.64,20.9,27.31-36.79,52.36-72.08,59.62-115.9l.72-98.81c.45-60.59,32.29-124.85,98.55-132.76-44.04,59.48-61.18,114.15-54.44,178.71,4.94,47.32-9.35,90.42-30.14,129.49,18.04-15.46,36.91-23.8,55.92-32.19,34.07-9.95,63.74-9.47,85.82-6.03-.09.1-.2.21-.29.31C532.88,489.25,557.81,529.39,548.42,567.47Z"/></g></symbol>
+<symbol id="nome" viewBox="78 396 935 154"><g fill="currentColor"><path d="M747.45,542.33c-.09,1.92-7.37,1.78-8.49.26l-41-55.6-42.13-58.11.06,101.63c0,5.79,4.08,9.18,8.36,12.51h-25.1c5.74-3.8,9.11-8.45,9.1-15.57l-.11-102.95c0-7.85-6.28-12.89-11.99-16.94l26.36-.44,38.61,51.34,39.95,53.85v-87.72c0-7.99-4.03-14.29-11.15-17.03l27.84-.22c-5.96,3.66-9.91,8.48-9.93,15.69L747.45,542.33Z"/><path d="M412.05,526.59c-16.19,26.03-51.79,22.9-80.63,8.11l.62-33.53c5.14,5.82,4.98,11.77,8.05,17.24,8.69,15.52,25.34,24.91,42.62,19.52,11.09-3.46,17.13-13.6,17.23-23.8.12-11.49-5.28-20.18-15.9-25.41l-29.67-14.6c-13.69-6.73-23.09-21.18-21.9-36.97,1.22-16.08,13.8-27.87,29.22-31.26,17.53-3.85,34.81.64,50.1,8.45-.9,10.94,1.75,19.42-1.53,30.16-4.09-8.19-5.9-15.03-10.89-21.83-9.73-13.26-29.89-17.35-42.69-5.81-11.83,10.68-8.53,31.37,5.44,38.57l36.43,18.77C418.42,484.45,424.22,507.04,412.05,526.59Z"/><path d="M459.15,544.52l-28.05-9.52-.22-32.34c3.87-.33,3.84,2.3,4.46,4.56,4.58,16.63,16.39,29.35,33.36,31.88,13.6,2.04,26.28-5.4,30.19-17.32,4.3-13.12-1.75-26.29-14.03-32.44l-32.62-16.34c-16.6-8.32-25.04-27.84-18.2-45.53,10.51-27.17,50.83-28.51,77.35-12.73-.65,10.47,1.71,18.95-1.09,29.17-4.91-11.58-8.41-21.77-18.14-28.2-11.18-7.38-26.93-8.16-36.74,1.71-11.09,11.16-7.27,30.92,6.4,38.06l35.23,18.38c11.67,6.1,19.13,16.43,20.5,28.23,1.55,13.43-3.36,26.06-14.33,34.42C490.97,545.84,474.39,549.7,459.15,544.52Z"/><path d="M955.93,476.94l-26.22-.34-.06,62.05,45.37-1.07c11.35-.27,15.9-12.1,21.15-22.21,2.12,10.02-1.22,18.42-1.76,27.82l-95.19-.11c5.7-3.58,9.82-7.39,9.82-14.45l.03-107.02c0-6.66-4.71-11.14-9.71-14.39l91.24-.11c.23,8.38,1.85,16.03.08,24.72-5.13-12.59-13.46-19.99-25.91-19.97l-35.05.06.13,59.97,25.19-.09c9.51-.03,14.81-5.65,18.79-14.78l.24,33.68C969.4,483.38,965.35,477.07,955.93,476.94Z"/><path d="M276.46,476.99l-26.39-.36.17,61.94,39.86-.04c13.28-.01,21.76-9.42,26.92-22.5,1.96,10.03-1.7,17.77-2.07,27.27l-95.09-.11c5.73-3.31,9.87-7.35,9.87-14.33l-.06-107.29c0-6.92-4.21-11.18-9.83-14.35l90.23-.03c.02,8.91,2.79,16.26.84,25.12-4.44-12.84-13.16-20.46-25.61-20.43l-35.17.09.14,60.02,26.9-.26c8.68-.08,13.24-5.8,16.92-14.55,1.74,11.38.98,20.95.43,33.34C289.96,483.25,285.78,477.12,276.46,476.99Z"/><path d="M587.98,477.34l-28.72-.7.02,61.94,44-.66c11.28-.16,17.72-10.62,22.85-21.39,2.32,9.11-1.31,17.27-1.08,26.84l-94.93-.27c5.67-2.98,9.79-8.6,9.79-15.88v-105.65c0-6.66-4.47-11.16-9.62-14.29l90.37-.26,1.14,24.62c-5.76-12.96-14.6-19.87-27.67-19.82l-34.92.13.06,60,26.69-.12c9.81-.05,14.25-5.77,18.77-14.89l-.39,33.86C600.35,482.98,596.43,477.55,587.98,477.34Z"/><path d="M799.88,515.38c12.79,18.97,33.94,28.08,54.85,20.94,14.08-4.82,22.14-15.99,31-29.2,1.49,9.52-1.39,16.89-2.89,26-28.69,18.09-67.08,18.37-93.37-4.65-17.31-15.16-23.55-39.1-21.71-61.53,2.38-29.19,22.31-53.21,50.64-60.31,22.21-5.56,44.53-1.42,64.89,9.58.07,9.6,1.59,18.47-.5,28.95-6.33-12.01-11-21.56-21.1-28.62-23.03-13.03-52.72-5.22-65.28,18.65C783.06,460.54,783.61,491.25,799.88,515.38Z"/><path d="M178.46,515.82c1.73,9.95-1.05,17.97-1.08,27.48l-94.25-.13c5.12-3.77,8.88-7.48,8.88-14.17l-.05-107.55c0-6.61-3.44-10.85-8.74-14.07l37.98-.07c-5.3,3.65-8.61,7.56-8.6,14.12l.04,117.07,40.92-.3C165.25,535.8,172.66,527.41,178.46,515.82Z"/><path d="M188.72,446.94c2.31-7.22,7.64-12.23,7.1-19.49-8.21,1.4-14.66-2.31-17.25-8.02-2.77-6.08-1.16-13.59,4.85-17.46,5.21-3.36,11.16-2.52,15.67.24,4.78,2.91,7.1,8.09,7.54,14.5C205.98,428.55,200.85,440.66,188.72,446.94Z"/></g></symbol>
+<symbol id="logo" viewBox="70 110 950 590"><g fill="currentColor"><path d="M649.79,231.3c-1.88,26.2-26.14,48.08-52.35,44.07,5.17,10.47-.17,21.87-10.04,25.3,2.38-19.31-4.84-35.04-20.11-44.18-7.27-4.34-14.5-8.88-18.41-18.1,12.18.76,23.7,1.23,34.54-3.51l22.17-14.19c13.6-8.7,32.58-10.91,43.96,2.73-19.68-1.2-34.37,2.92-47.81,13.8-9.85,7.97-21.56,11.04-33.3,12.06,8.28,2.44,13.82,7.14,20.44,11.06,13.09,7.75,29.1,3.15,39.44-7.5C635.26,245.68,640.04,237.69,649.79,231.3Z"/><path d="M432.96,242.68c1.88-26.2,26.14-48.08,52.35-44.07-5.17-10.46.17-21.86,10.04-25.29-2.38,19.3,4.84,35.03,20.11,44.17,7.27,4.35,14.5,8.88,18.41,18.1-12.18-.76-23.7-1.23-34.54,3.52l-22.17,14.18c-13.6,8.7-32.58,10.92-43.96-2.73,19.68,1.2,34.37-2.92,47.81-13.79,9.85-7.98,21.56-11.04,33.3-12.07-8.28-2.43-13.82-7.14-20.44-11.06-13.09-7.74-29.1-3.15-39.44,7.5C447.49,228.3,442.71,236.29,432.96,242.68Z"/><path d="M535.68,128.58c26.2,1.88,48.08,26.14,44.08,52.34,10.46-5.17,21.86.18,25.29,10.05-19.31-2.38-35.03,4.84-44.17,20.11-4.35,7.26-8.89,14.49-18.1,18.41.75-12.18,1.22-23.7-3.52-34.54l-14.18-22.18c-8.7-13.6-10.92-32.57,2.73-43.96-1.2,19.68,2.91,34.38,13.79,47.82,7.97,9.85,11.04,21.56,12.07,33.3,2.43-8.29,7.14-13.82,11.05-20.45,7.75-13.08,3.15-29.1-7.5-39.43C550.06,143.1,542.08,138.32,535.68,128.58Z"/><path d="M547.06,345.41c-26.19-1.89-48.07-26.15-44.07-52.35-10.46,5.17-21.86-.18-25.29-10.04,19.31,2.37,35.03-4.85,44.17-20.12,4.35-7.26,8.89-14.49,18.1-18.41-.75,12.19-1.22,23.71,3.52,34.55l14.18,22.17c8.7,13.6,10.92,32.57-2.73,43.96,1.2-19.68-2.91-34.38-13.79-47.82-7.97-9.85-11.04-21.55-12.07-33.3-2.43,8.29-7.14,13.83-11.06,20.45-7.74,13.08-3.14,29.1,7.51,39.43C532.69,330.88,540.67,335.66,547.06,345.41Z"/><path d="M747.45,542.33c-.09,1.92-7.37,1.78-8.49.26l-41-55.6-42.13-58.11.06,101.63c0,5.79,4.08,9.18,8.36,12.51h-25.1c5.74-3.8,9.11-8.45,9.1-15.57l-.11-102.95c0-7.85-6.28-12.89-11.99-16.94l26.36-.44,38.61,51.34,39.95,53.85v-87.72c0-7.99-4.03-14.29-11.15-17.03l27.84-.22c-5.96,3.66-9.91,8.48-9.93,15.69L747.45,542.33Z"/><path d="M412.05,526.59c-16.19,26.03-51.79,22.9-80.63,8.11l.62-33.53c5.14,5.82,4.98,11.77,8.05,17.24,8.69,15.52,25.34,24.91,42.62,19.52,11.09-3.46,17.13-13.6,17.23-23.8.12-11.49-5.28-20.18-15.9-25.41l-29.67-14.6c-13.69-6.73-23.09-21.18-21.9-36.97,1.22-16.08,13.8-27.87,29.22-31.26,17.53-3.85,34.81.64,50.1,8.45-.9,10.94,1.75,19.42-1.53,30.16-4.09-8.19-5.9-15.03-10.89-21.83-9.73-13.26-29.89-17.35-42.69-5.81-11.83,10.68-8.53,31.37,5.44,38.57l36.43,18.77C418.42,484.45,424.22,507.04,412.05,526.59Z"/><path d="M459.15,544.52l-28.05-9.52-.22-32.34c3.87-.33,3.84,2.3,4.46,4.56,4.58,16.63,16.39,29.35,33.36,31.88,13.6,2.04,26.28-5.4,30.19-17.32,4.3-13.12-1.75-26.29-14.03-32.44l-32.62-16.34c-16.6-8.32-25.04-27.84-18.2-45.53,10.51-27.17,50.83-28.51,77.35-12.73-.65,10.47,1.71,18.95-1.09,29.17-4.91-11.58-8.41-21.77-18.14-28.2-11.18-7.38-26.93-8.16-36.74,1.71-11.09,11.16-7.27,30.92,6.4,38.06l35.23,18.38c11.67,6.1,19.13,16.43,20.5,28.23,1.55,13.43-3.36,26.06-14.33,34.42C490.97,545.84,474.39,549.7,459.15,544.52Z"/><path d="M955.93,476.94l-26.22-.34-.06,62.05,45.37-1.07c11.35-.27,15.9-12.1,21.15-22.21,2.12,10.02-1.22,18.42-1.76,27.82l-95.19-.11c5.7-3.58,9.82-7.39,9.82-14.45l.03-107.02c0-6.66-4.71-11.14-9.71-14.39l91.24-.11c.23,8.38,1.85,16.03.08,24.72-5.13-12.59-13.46-19.99-25.91-19.97l-35.05.06.13,59.97,25.19-.09c9.51-.03,14.81-5.65,18.79-14.78l.24,33.68C969.4,483.38,965.35,477.07,955.93,476.94Z"/><path d="M276.46,476.99l-26.39-.36.17,61.94,39.86-.04c13.28-.01,21.76-9.42,26.92-22.5,1.96,10.03-1.7,17.77-2.07,27.27l-95.09-.11c5.73-3.31,9.87-7.35,9.87-14.33l-.06-107.29c0-6.92-4.21-11.18-9.83-14.35l90.23-.03c.02,8.91,2.79,16.26.84,25.12-4.44-12.84-13.16-20.46-25.61-20.43l-35.17.09.14,60.02,26.9-.26c8.68-.08,13.24-5.8,16.92-14.55,1.74,11.38.98,20.95.43,33.34C289.96,483.25,285.78,477.12,276.46,476.99Z"/><path d="M587.98,477.34l-28.72-.7.02,61.94,44-.66c11.28-.16,17.72-10.62,22.85-21.39,2.32,9.11-1.31,17.27-1.08,26.84l-94.93-.27c5.67-2.98,9.79-8.6,9.79-15.88v-105.65c0-6.66-4.47-11.16-9.62-14.29l90.37-.26,1.14,24.62c-5.76-12.96-14.6-19.87-27.67-19.82l-34.92.13.06,60,26.69-.12c9.81-.05,14.25-5.77,18.77-14.89l-.39,33.86C600.35,482.98,596.43,477.55,587.98,477.34Z"/><path d="M799.88,515.38c12.79,18.97,33.94,28.08,54.85,20.94,14.08-4.82,22.14-15.99,31-29.2,1.49,9.52-1.39,16.89-2.89,26-28.69,18.09-67.08,18.37-93.37-4.65-17.31-15.16-23.55-39.1-21.71-61.53,2.38-29.19,22.31-53.21,50.64-60.31,22.21-5.56,44.53-1.42,64.89,9.58.07,9.6,1.59,18.47-.5,28.95-6.33-12.01-11-21.56-21.1-28.62-23.03-13.03-52.72-5.22-65.28,18.65C783.06,460.54,783.61,491.25,799.88,515.38Z"/><path d="M178.46,515.82c1.73,9.95-1.05,17.97-1.08,27.48l-94.25-.13c5.12-3.77,8.88-7.48,8.88-14.17l-.05-107.55c0-6.61-3.44-10.85-8.74-14.07l37.98-.07c-5.3,3.65-8.61,7.56-8.6,14.12l.04,117.07,40.92-.3C165.25,535.8,172.66,527.41,178.46,515.82Z"/><path d="M188.72,446.94c2.31-7.22,7.64-12.23,7.1-19.49-8.21,1.4-14.66-2.31-17.25-8.02-2.77-6.08-1.16-13.59,4.85-17.46,5.21-3.36,11.16-2.52,15.67.24,4.78,2.91,7.1,8.09,7.54,14.5C205.98,428.55,200.85,440.66,188.72,446.94Z"/><text x="553" y="660" text-anchor="middle" font-family="Grandis,sans-serif" font-weight="400" font-size="62" letter-spacing="15.5">CLINIC</text></g></symbol>
+<symbol id="logoh" viewBox="0 0 1240 230"><g fill="currentColor"><use href="#icone" x="0" y="0" width="230" height="230"/><use href="#nome" x="290" y="38" width="935" height="154"/></g></symbol>
+<pattern id="padrao-t" width="120" height="120" patternUnits="userSpaceOnUse"><use href="#icone" x="18" y="18" width="44" height="44" color="#B57D67"/><use href="#icone" x="78" y="78" width="24" height="24" color="#C9B3A1"/></pattern>
+<pattern id="padrao-g" width="120" height="120" patternUnits="userSpaceOnUse"><use href="#icone" x="18" y="18" width="44" height="44" color="#C9B3A1"/><circle cx="90" cy="90" r="2.4" fill="#B57D67"/></pattern>
+<pattern id="padrao-n" width="96" height="96" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><use href="#lform" x="22" y="22" width="52" height="52" color="#F6F0EA"/></pattern>
+</defs></svg>
+
+<div class="barra" id="barra"></div>
+
+<nav class="nav" aria-label="Seções">
+  <svg class="mini" aria-hidden="true"><use href="#icone"/></svg>
+  <div class="links">
+    <a href="#conceito">Conceito</a>
+    <a href="#marca">Marca</a>
+    <a href="#versoes">Versões</a>
+    <a href="#cores">Cores</a>
+    <a href="#tipografia">Tipografia</a>
+    <a href="#padrao">Padrão</a>
+    <a href="#tom">Tom</a>
+    <a href="#aplicacoes">Aplicações</a>
+    <a href="#site">Site</a>
+  </div>
+  <a class="baixar" id="nav-baixar" href="#" hidden>Baixar arquivos</a>
+</nav>
+
+<!-- 00 · ABERTURA -->
+<section id="abertura">
+  <div class="fixo">
+    <div class="capa-foto" id="capa-foto"></div>
+    <div class="hero-logo" id="hero-logo"></div>
+    <div class="dica" id="dica">role para montar</div>
+    <div class="hero-base" id="hero-base"><span>Identidade visual</span><span class="rola" id="rola">role <i></i></span><span>Cotia · 2026</span></div>
+  </div>
+</section>
+
+<!-- 01 · CONCEITO -->
+<section id="conceito">
+  <div class="fixo">
+    <div>
+      <div class="rotulo"><b>01</b> Conceito</div>
+      <h2 class="titulo" style="margin:16px 0 18px">Um L que<br>vira <em>flor</em>.</h2>
+      <p class="texto">O símbolo nasce da letra L, desenhada com traço de pincel: grosso na curva e fino nas pontas. O nome está dentro do desenho, e a flor traz a delicadeza que a clínica quer passar.</p>
+      <div class="passos">
+        <div class="passo"><h4>O L em traço caligráfico</h4><p>A inicial do nome, escrita como se fosse à mão.</p></div>
+        <div class="passo"><h4>Girado quatro vezes, a 90°</h4><p>O mesmo L se repete em volta de um centro.</p></div>
+        <div class="passo"><h4>A flor L'Essence</h4><p>Quatro pétalas. A letra vira o símbolo da clínica.</p></div>
+      </div>
+    </div>
+    <div class="palco-l" id="palco-l">
+      <div class="fundo-escuro" id="fundo-escuro"></div>
+      <span class="grau" id="grau">0°</span>
+      <div class="gira" id="gira">
+        <svg class="l-rot" aria-hidden="true"><use href="#lform"/></svg>
+        <svg class="l-rot" aria-hidden="true"><use href="#lform"/></svg>
+        <svg class="l-rot" aria-hidden="true"><use href="#lform"/></svg>
+        <svg class="l-rot" aria-hidden="true"><use href="#lform"/></svg>
+        <svg class="flor" id="flor-c" role="img" aria-label="Ícone L'Essence"><use href="#icone"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 · MARCA -->
+<section id="marca">
+  <div class="fixo">
+    <div>
+      <div class="rotulo"><b>02</b> Marca principal</div>
+      <h2 class="titulo" style="margin:16px 0 18px">Flor, nome<br>e <em>silêncio</em>.</h2>
+      <p class="texto">A versão vertical é a principal. A flor no alto, o nome em serifa logo abaixo e o descritor bem espaçado, como uma respiração no final.</p>
+      <div class="passos" id="passos-m">
+        <div class="passo"><h4>A flor</h4><p>Centralizada sobre o nome, do tamanho de quatro letras.</p></div>
+        <div class="passo"><h4>O nome</h4><p>L'ESSENCE em serifa de traço contrastado, com o apóstrofo como detalhe.</p></div>
+        <div class="passo"><h4>O descritor</h4><p>CLINIC em Grandis, caixa alta e espaçamento largo, alinhado ao centro.</p></div>
+      </div>
+    </div>
+    <div class="construcao" id="construcao"></div>
+  </div>
+</section>
+
+<!-- 03 · VERSÕES -->
+<section id="versoes">
+  <div class="wrap">
+    <div class="cab">
+      <div><div class="rotulo"><b>03</b> Variações</div><h2 class="titulo" style="margin-top:16px">Em todo <em>fundo</em>.</h2></div>
+      <p class="texto">A marca funciona sobre as cores da paleta e sobre foto. Em fundo escuro, o nome fica claro e a flor ganha o pêssego.</p>
+    </div>
+    <div class="grade" id="grade">
+      <div class="cell c-terra"><div class="lgw"><svg style="width:100%;aspect-ratio:950/590" role="img" aria-label="Marca sobre terracota"><use href="#logo"/></svg></div></div>
+      <div class="cell c-graf"><div class="icw"><svg style="width:100%;aspect-ratio:1" role="img" aria-label="Ícone sobre grafite"><use href="#icone"/></svg></div></div>
+      <div class="cell c-foto" role="img" aria-label="Foto de simulação"></div>
+      <div class="cell c-off"><div class="lgw"><svg style="width:100%;aspect-ratio:950/590" role="img" aria-label="Marca sobre branco"><use href="#logo"/></svg></div></div>
+      <div class="cell c-neg"><div class="lgw"><svg style="width:100%;aspect-ratio:950/590" role="img" aria-label="Marca em negativo"><use href="#logo"/></svg></div></div>
+      <div class="cell c-pad"><svg style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true"><rect width="100%" height="100%" fill="url(#padrao-g)"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · ASSINATURAS -->
+<section id="assinaturas">
+  <div class="wrap">
+    <div class="cab">
+      <div><div class="rotulo"><b>04</b> Assinaturas</div><h2 class="titulo" style="margin-top:16px">Versões<br>da <em>marca</em>.</h2></div>
+      <p class="texto">A versão vertical é a principal. A horizontal entra em cabeçalho de site, assinatura de e-mail e faixas estreitas. O ícone sozinho vale para perfil, favicon, selo e detalhes de embalagem.</p>
+    </div>
+    <div class="assin-grid">
+      <div class="tile"><div class="art"><svg style="width:85%;aspect-ratio:950/590" role="img" aria-label="Versão vertical"><use href="#logo"/></svg></div><div class="cap">Vertical · principal</div></div>
+      <div class="tile"><div class="art"><svg style="width:90%;aspect-ratio:1240/230" role="img" aria-label="Versão horizontal"><use href="#logoh"/></svg></div><div class="cap">Horizontal</div></div>
+      <div class="tile" style="background:var(--grafite)"><div class="art" style="color:var(--pessego)"><svg style="width:46%;aspect-ratio:1" role="img" aria-label="Ícone"><use href="#icone"/></svg></div><div class="cap" style="color:var(--areia)">Ícone · perfil e selo</div></div>
+    </div>
+    <div class="medidas">
+      <div class="reducoes" id="reducoes">
+        <figure><svg style="width:96px;height:96px" aria-hidden="true"><use href="#icone"/></svg>96 PX</figure>
+        <figure><svg style="width:48px;height:48px" aria-hidden="true"><use href="#icone"/></svg>48 PX</figure>
+        <figure><svg style="width:32px;height:32px" aria-hidden="true"><use href="#icone"/></svg>32 PX</figure>
+        <figure><svg style="width:16px;height:16px" aria-hidden="true"><use href="#icone"/></svg>16 PX</figure>
+        <figure><svg style="width:170px;aspect-ratio:950/590;color:var(--grafite)" aria-hidden="true"><use href="#logo"/></svg>VERTICAL MÍNIMA · 30 MM</figure>
+        <figure><svg style="width:150px;aspect-ratio:1240/230;color:var(--grafite)" aria-hidden="true"><use href="#logoh"/></svg>HORIZONTAL MÍNIMA · 35 MM</figure>
+      </div>
+      <div class="area" id="area">
+        <div class="box">
+          <div class="respiro"></div><div class="moldura"></div>
+          <svg class="pet" style="left:0;top:0" aria-hidden="true"><use href="#icone"/></svg>
+          <svg role="img" aria-label="Área de proteção"><use href="#logo"/></svg>
+        </div>
+        <p>Área de proteção: deixe em volta da marca um espaço livre igual à altura de uma pétala do ícone. Nada de texto, foto ou borda dentro dele.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 · CORES -->
+<section id="cores">
+  <div class="pilha" id="pilha">
+    <div class="fixo">
+      <div class="cab">
+        <div><div class="rotulo"><b>05</b> Paleta</div><h2 class="titulo" style="margin-top:14px">Tons de pele, <em>terra</em> e calma.</h2></div>
+        <p class="texto">Nude e grafite fazem a base. A terracota é a cor da flor e dos destaques. Clique numa cor para copiar o código.</p>
+      </div>
+      <div class="palco-c" id="palco-c">
+        <div class="cartao" style="--i:0;background:var(--nude)" data-hex="#E6DCD2">
+          <div class="topo"><span class="nome">Nude</span><span class="hex">#E6DCD2</span></div>
+          <div class="base"><span class="uso">Fundo principal. O tom que acolhe.</span><span class="cod">RGB 230 220 210<br><span class="copiar">copiar</span></span></div>
+        </div>
+        <div class="cartao" style="--i:1;background:var(--grafite);color:var(--off)" data-hex="#2C2A2A">
+          <div class="topo"><span class="nome">Grafite</span><span class="hex">#2C2A2A</span></div>
+          <div class="base"><span class="uso">Nome e textos. Firme, sem ser preto.</span><span class="cod">RGB 44 42 42<br><span class="copiar">copiar</span></span></div>
+        </div>
+        <div class="cartao" style="--i:2;background:var(--terracota);color:var(--off)" data-hex="#B57D67">
+          <div class="topo"><span class="nome">Terracota</span><span class="hex">#B57D67</span></div>
+          <div class="base"><span class="uso">Ícone e destaques. Nunca em texto pequeno sobre nude.</span><span class="cod">RGB 181 125 103<br><span class="copiar">copiar</span></span></div>
+        </div>
+        <div class="cartao" style="--i:3;background:var(--pessego)" data-hex="#D7A994">
+          <div class="topo"><span class="nome">Pêssego</span><span class="hex">#D7A994</span></div>
+          <div class="base"><span class="uso">Apoio. Suaviza fundos e detalhes.</span><span class="cod">RGB 215 169 148<br><span class="copiar">copiar</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="apoio-wrap wrap">
+    <div class="rotulo" style="margin-bottom:18px">Cores de apoio</div>
+    <div class="apoio" id="apoio">
+      <div class="cor" style="background:#fff;border:1px solid #e3d9cf" data-hex="#F6F0EA"><b>Off-white</b>#F6F0EA · papel e site</div>
+      <div class="cor" style="background:var(--areia)" data-hex="#C9B3A1"><b>Areia</b>#C9B3A1 · linhas</div>
+      <div class="cor" style="background:var(--cacau);color:var(--off)" data-hex="#5B4038"><b>Cacau</b>#5B4038 · texto secundário</div>
+      <div class="cor" style="background:var(--argila);color:var(--off)" data-hex="#8E5A4A"><b>Argila</b>#8E5A4A · botões</div>
+    </div>
+    <div class="prop" id="prop" title="Proporção de uso"><i style="flex:40;background:var(--nude)"></i><i style="flex:22;background:#fff"></i><i style="flex:18;background:var(--grafite)"></i><i style="flex:12;background:var(--terracota)"></i><i style="flex:8;background:var(--pessego)"></i></div>
+    <div class="prop-leg"><span>Proporção de uso</span><span>mais nude, pouca terracota</span></div>
+  </div>
+</section>
+
+<!-- 06 · TIPOGRAFIA -->
+<section id="tipografia">
+  <div class="letra" id="letra">
+    <div class="fixo">
+      <svg viewBox="0 0 640 440" id="svgA" aria-label="Construção das letras Aa em Addington CF">
+        <g id="guiasA"></g>
+        <defs><clipPath id="tinta"><rect id="tinta-rect" x="0" y="440" width="640" height="440"/></clipPath></defs>
+        <text class="cheio" id="aa-cheio" clip-path="url(#tinta)" x="70" y="330" font-size="300">Aa</text>
+        <text class="contorno" id="aa-contorno" x="70" y="330" font-size="300">Aa</text>
+        <g id="pontosA"></g>
+      </svg>
+      <div>
+        <div class="rotulo"><b>06</b> Tipografia</div>
+        <h2 class="titulo" style="margin:16px 0 18px">Por dentro<br>do <em>Aa</em>.</h2>
+        <p class="texto">Addington CF: serifa de traço contrastado, elegante sem ser fria. Ela assina os títulos, as chamadas e as frases curtas.</p>
+        <div class="fase" id="fase">as linhas da letra</div>
+      </div>
+    </div>
+  </div>
+  <div class="especime wrap">
+    <div class="familias">
+      <div class="col">
+        <div class="rotulo">Títulos</div>
+        <div class="big-aa" style="margin-top:22px">Aa</div>
+        <h3>Addington CF</h3>
+        <div class="abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz · 0123456789</div>
+        <div class="pesos-l" style="font-family:var(--serif)">
+          <span style="font-weight:300">Calma<small>Light</small></span>
+          <span style="font-weight:400">Calma<small>Regular</small></span>
+          <span style="font-weight:300;font-style:italic">Calma<small>Itálico</small></span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="rotulo">Textos e descritores</div>
+        <div class="big-aa sans" style="margin-top:30px">Aa</div>
+        <h3>Grandis</h3>
+        <div class="abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz · 0123456789</div>
+        <div class="pesos-l" style="font-family:var(--sans)">
+          <span style="font-weight:300">Calma<small>Light</small></span>
+          <span style="font-weight:400">Calma<small>Regular</small></span>
+          <span style="font-weight:500">Calma<small>Medium</small></span>
+        </div>
+      </div>
+    </div>
+    <div class="vivo">
+      <div class="vivo-topo">
+        <div class="rotulo">Teste ao vivo · clique no texto para escrever</div>
+        <div class="opcoes" id="opcoes">
+          <button data-f="serif" data-w="300">Addington Light</button>
+          <button data-f="serif" data-w="400" class="on">Regular</button>
+          <button data-f="serif" data-w="300" data-i="1">Itálico</button>
+          <span class="sep"></span>
+          <button data-f="sans" data-w="300">Grandis Light</button>
+          <button data-f="sans" data-w="400">Regular</button>
+          <button data-f="sans" data-w="500">Medium</button>
+        </div>
+      </div>
+      <div class="vivo-frase" id="frase" contenteditable="true" spellcheck="false">Estética com calma.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 · PADRÃO -->
+<section id="padrao">
+  <div class="wrap">
+    <div class="cab">
+      <div><div class="rotulo"><b>07</b> Padrão</div><h2 class="titulo" style="margin-top:16px">A flor em<br><em>repetição</em>.</h2></div>
+      <p class="texto">O padrão usa a flor e o L do símbolo. Serve para papel de seda, sacolas, verso de cartão, fundo de destaque no Instagram e adesivo de vidro na recepção.</p>
+    </div>
+    <div class="pads">
+      <div class="pad" style="background:var(--grafite)" data-tipo="g"><div class="campo"></div><span class="tag">Grafite</span></div>
+      <div class="pad" style="background:var(--nude)" data-tipo="t"><div class="campo"></div><span class="tag">Nude</span></div>
+      <div class="pad" style="background:var(--terracota)" data-tipo="n"><div class="campo"></div><span class="tag">Terracota · traço do L</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 · TOM -->
+<section id="tom">
+  <div class="wrap">
+    <div class="edit">
+      <div class="a"><svg class="huge" id="huge" aria-hidden="true"><use href="#icone"/></svg><div class="seal" id="seal"><svg aria-hidden="true"><use href="#icone"/></svg></div></div>
+      <div class="b"><span class="v">L'Essence Clinic</span></div>
+      <div class="c" role="img" aria-label="Foto de simulação"></div>
+      <div class="d"><span class="rotulo claro" style="margin-bottom:22px"><b style="color:var(--pessego)">08</b> Tom de voz</span><p id="frase-tom">Estética com calma.<br><i>Atendimento só seu.</i></p></div>
+    </div>
+    <div class="frases">
+      <div><h5>A gente fala assim</h5><ul><li>"Um momento de paz no meio da semana."</li><li>Pacote, promoção, cuidado.</li><li>"Me sinto muito bem aqui."</li></ul></div>
+      <div class="nao"><h5>E evita</h5><ul><li>Barato.</li><li>Resultado garantido.</li><li>Preço no post.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 · APLICAÇÕES -->
+<section id="aplicacoes">
+  <div class="wrap">
+    <div class="cab">
+      <div><div class="rotulo"><b>09</b> Aplicações</div><h2 class="titulo" style="margin-top:16px">A marca no<br><em>dia a dia</em>.</h2></div>
+      <p class="texto">Cartão quadrado de cantos arredondados (frente única e um verso para cada sócia) e placa da recepção.</p>
+    </div>
+    <div class="apl-grid">
+      <div class="m-cartoes" id="cartoes">
+        <div class="card f"><div class="fi"><svg aria-hidden="true"><use href="#icone"/></svg></div><div class="fn"><svg role="img" aria-label="L'Essence"><use href="#nome"/></svg></div></div>
+        <div class="card v"><svg class="ic" aria-hidden="true"><use href="#icone"/></svg><div class="info"><b>Daniela Souza</b>Sócia<br>Estrada do Capuava, 485 · Jardim Sabiá · Cotia<br>@instagram · (11) 00000-0000</div></div>
+        <div class="card v"><svg class="ic" aria-hidden="true"><use href="#icone"/></svg><div class="info"><b>Beatriz Cuevas</b>Sócia<br>Estrada do Capuava, 485 · Jardim Sabiá · Cotia<br>@instagram · (11) 00000-0000</div></div>
+      </div>
+      <div class="m-parede" id="parede"><svg role="img" aria-label="Placa da recepção"><use href="#logo"/></svg><div class="luz" id="luz"></div><span class="legenda-m">Placa da recepção</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="posts">
+  <div class="posts-pin" id="posts-pin">
+    <div class="posts-cab">
+      <div><div class="rotulo">Instagram</div><h2 class="titulo" style="margin-top:14px">No <em>feed</em>.</h2></div>
+      <p class="texto">Quatro formatos de post. As fotos são do banco de imagens, só para simular o clima. No feed real, vale usar fotos do espaço novo e das duas.</p>
+    </div>
+    <div class="trilho" id="trilho">
+      <div class="painel">
+        <div class="info"><div class="num">01</div><h3>Foto e frase</h3><p>Foto do ambiente, frase curta em serifa e a flor no canto.</p></div>
+        <div class="post p1"><svg class="ic" aria-hidden="true"><use href="#icone"/></svg><h4>Um momento de paz no meio da semana.</h4><small>L'Essence Clinic</small></div>
+      </div>
+      <div class="painel">
+        <div class="info"><div class="num">02</div><h3>Aviso com padrão</h3><p>Terracota com o traço do L ao fundo. Para novidades da clínica.</p></div>
+        <div class="post p2"><svg class="pt" aria-hidden="true"><rect width="100%" height="100%" fill="url(#padrao-n)"/></svg><svg class="ic" aria-hidden="true"><use href="#icone"/></svg><h4>Espaço novo, mais salas e estacionamento.</h4><small>Estrada do Capuava, 485</small></div>
+      </div>
+      <div class="painel">
+        <div class="info"><div class="num">03</div><h3>Lista de cuidados</h3><p>Fundo nude, título e lista simples. Sem preço por enquanto.</p></div>
+        <div class="post p3"><svg class="ic" aria-hidden="true"><use href="#icone"/></svg><h4>Nossos cuidados</h4><div class="lst">Limpeza de pele<br>Cílios<br>Unhas<br>Depilação</div></div>
+      </div>
+      <div class="painel">
+        <div class="info"><div class="num">04</div><h3>Fala das clientes</h3><p>Grafite e uma frase real, entre aspas.</p></div>
+        <div class="post p4"><svg class="ic" aria-hidden="true"><use href="#icone"/></svg><h4>"Me sinto muito bem aqui."</h4><small>O que a gente mais ouve</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · SITE -->
+<section id="site">
+  <div class="wrap">
+    <div class="cab">
+      <div><div class="rotulo"><b>10</b> Próximo passo</div><h2 class="titulo" style="margin-top:16px">Site com agenda<br>e <em>WhatsApp</em>.</h2></div>
+      <p class="texto">A cliente escolhe o dia, o cuidado e o horário no site. O botão abre o WhatsApp da clínica com a mensagem pronta, e a equipe só confirma. Clique na agenda abaixo para testar.</p>
+    </div>
+    <div class="browser" id="browser">
+      <div class="bar"><i></i><i></i><i></i><span>lessenceclinic.com.br</span></div>
+      <div class="snav"><svg role="img" aria-label="L'Essence Clinic"><use href="#logoh"/></svg><ul><li>Cuidados</li><li>O espaço</li><li>Sobre nós</li><li>Contato</li></ul><a class="btn" href="#agenda">Agendar</a></div>
+      <div class="hero">
+        <div class="txt">
+          <span class="pill"><b>Cotia</b>Jardim Sabiá</span>
+          <h1>Estética<br>com <em>calma</em>.</h1>
+          <p>Um espaço tranquilo, atendimento só seu e a sensação de sair se sentindo bem.</p>
+          <a class="btn terra" href="#agenda">Ver horários</a>
+        </div>
+        <div class="agenda" id="agenda">
+          <div class="top"><div class="mes">Novembro, 2026</div><div class="dias" id="dias"></div></div>
+          <div class="sec">Cuidado</div><div class="servs" id="servs"></div>
+          <div class="sec">Horário</div><div class="horas" id="horas"></div>
+          <a class="btn wa" id="wa" href="#agenda">Confirmar pelo WhatsApp</a>
+          <div class="wa-msg" id="wamsg">Escolha cuidado e horário</div>
+        </div>
+      </div>
+      <div class="faixa">
+        <div><h5>Atendimento individual</h5><p>Uma cliente de cada vez, com atenção inteira.</p></div>
+        <div><h5>Espaço novo</h5><p>Mais salas, ambiente calmo e estacionamento.</p></div>
+        <div><h5>Pacotes</h5><p>Planos de cuidado para manter a rotina.</p></div>
+      </div>
+    </div>
+    <div class="fluxo" id="fluxo">
+      <div><b>1. Escolhe</b>Dia, cuidado e horário no site, pelo celular.</div>
+      <div><b>2. Envia</b>O WhatsApp abre com a mensagem pronta.</div>
+      <div><b>3. Confirma</b>A clínica responde e confirma o horário.</div>
+      <div><b>4. Lembra</b>Na fase 2, a agenda integrada envia lembrete automático.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FIM -->
+<section id="fim">
+  <div>
+    <div class="flor-fim" id="flor-fim"></div>
+    <div class="grande" aria-label="Obrigado."><span id="digita" aria-hidden="true"></span><span class="cursor" aria-hidden="true"></span></div>
+    <p class="assin">L'Essence Clinic · Cotia</p>
+    <a class="botao" id="fim-baixar" href="#" hidden>Baixar arquivos da marca</a>
+  </div>
+  <div class="creditos">Identidade visual · Igor Alves · Direção de arte</div>
+</section>
+
+<div class="toast" id="toast">Copiado</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(async function(){
+/* ====== CONFIGURAÇÃO DO CLIENTE ====== */
+const CONFIG = {
+  download: false,                       // liga o botão "Baixar arquivos" depois de pago
+  downloadUrl: 'arquivos/lessence-clinic-marca.zip',
+  whatsapp: '5511000000000'              // trocar pelo WhatsApp da clínica
+};
+
+const reduz = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const mobile = matchMedia('(max-width: 860px)').matches;
+const NS = 'http://www.w3.org/2000/svg';
+gsap.registerPlugin(ScrollTrigger);
+
+/* Rolagem suave */
+let lenis = null;
+if (!reduz && window.Lenis) {
+  lenis = new Lenis({ lerp: 0.09 });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(t => lenis.raf(t * 1000));
+  gsap.ticker.lagSmoothing(0);
+}
+document.querySelectorAll('.nav a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  const id = a.getAttribute('href'); if (id.length < 2) return;
+  e.preventDefault();
+  lenis ? lenis.scrollTo(id, { offset: 0, duration: 1.4 }) : document.querySelector(id).scrollIntoView();
+}));
+
+if (CONFIG.download) {
+  ['nav-baixar', 'fim-baixar'].forEach(id => { const el = document.getElementById(id); el.hidden = false; el.href = CONFIG.downloadUrl; el.setAttribute('download', ''); });
+}
+
+/* Barra de progresso + nav ativa */
+const barra = document.getElementById('barra');
+ScrollTrigger.create({ start: 0, end: 'max', onUpdate: s => barra.style.width = (s.progress * 100) + '%' });
+function navAtiva() { document.querySelectorAll('.nav .links a').forEach(a => {
+  ScrollTrigger.create({ trigger: a.getAttribute('href'), endTrigger: a.getAttribute('href') === '#aplicacoes' ? '#posts' : a.getAttribute('href'),
+    start: 'top 50%', end: 'bottom 50%',
+    onToggle: s => a.classList.toggle('ativo', s.isActive), onRefresh: s => a.classList.toggle('ativo', s.isActive) });
+}); }
+
+await document.fonts.load('400 62px Grandis');
+await document.fonts.load('400 300px "Addington CF"');
+
+/* ====== LOGO EM PARTES (a partir do símbolo #logo) ====== */
+const simb = document.getElementById('logo');
+const caminhos = [...simb.querySelectorAll('path')].map(p => p.getAttribute('d'));
+const PET = caminhos.slice(0, 4), LET = caminhos.slice(4);
+function logoPartes() {
+  return `<svg viewBox="70 110 950 590" role="img" aria-label="L'Essence Clinic">
+    <g class="g-flor">${PET.map(d => `<path class="petala" fill="currentColor" d="${d}"/>`).join('')}</g>
+    <g class="g-nome">${LET.map(d => `<path class="letra-n" fill="currentColor" d="${d}"/>`).join('')}</g>
+    <text class="g-clinic" x="553" y="660" text-anchor="middle" font-family="Grandis,sans-serif" font-size="62" letter-spacing="15.5" fill="currentColor">CLINIC</text></svg>`;
+}
+
+/* ====== 00 · ABERTURA: tela vazia → pétalas soltas → flor → nome → foto ====== */
+const heroLogo = document.getElementById('hero-logo');
+heroLogo.innerHTML = logoPartes();
+const petalas = heroLogo.querySelectorAll('.petala');
+const letrasN = heroLogo.querySelectorAll('.letra-n');
+const clinic = heroLogo.querySelector('.g-clinic');
+const solto = [
+  { x: 330, y: -150, rotation: 150, scale: 1.7 },
+  { x: -380, y: 140, rotation: -130, scale: 1.5 },
+  { x: -230, y: -190, rotation: -200, scale: 1.4 },
+  { x: 250, y: 260, rotation: 110, scale: 1.6 }
+];
+gsap.set(petalas, { transformOrigin: '50% 50%', opacity: 0, x: i => solto[i].x, y: i => solto[i].y, rotation: i => solto[i].rotation, scale: 0 });
+gsap.set(letrasN, { opacity: 0, y: 26 });
+gsap.set(clinic, { opacity: 0, attr: { 'letter-spacing': 40 } });
+const ab = gsap.timeline({ scrollTrigger: { trigger: '#abertura', start: 'top top', end: 'bottom bottom', scrub: .7 } });
+ab.to('#rola', { opacity: 0, duration: .4 }, .3)
+  .to(petalas, { opacity: 1, scale: i => solto[i].scale, duration: 1.2, stagger: .25, ease: 'power2.out' }, .4)
+  .to('#dica', { opacity: 1, duration: .6 }, .9)
+  .to(petalas, { x: 0, y: 0, rotation: 0, scale: 1, duration: 3, stagger: .12, ease: 'power3.inOut' }, 2.6)
+  .to('#dica', { opacity: 0, duration: .6 }, 4.6)
+  .to(letrasN, { opacity: 1, y: 0, duration: 1, stagger: .1, ease: 'power2.out' }, 5.6)
+  .to(clinic, { opacity: 1, attr: { 'letter-spacing': 15.5 }, duration: 1.4, ease: 'power2.out' }, 6.4)
+  .to('#capa-foto', { clipPath: 'circle(75% at 50% 46%)', duration: 2.4, ease: 'power2.inOut' }, 8.4)
+  .to(heroLogo, { color: '#F6F0EA', duration: 1.2 }, 8.8)
+  .to('#hero-base', { color: '#F6F0EA', duration: 1 }, 9.2)
+  .to({}, { duration: .8 });
+if (reduz) ab.progress(1);
+
+/* ====== 01 · CONCEITO: o L gira 4x e vira flor ====== */
+const lrot = document.querySelectorAll('.l-rot');
+const grau = document.getElementById('grau');
+const passosC = document.querySelectorAll('#conceito .passo');
+gsap.set(lrot, { opacity: 0, transformOrigin: '50% 50%' });
+gsap.set(lrot[0], { opacity: 1 });
+const angulo = { a: 0 };
+const ct = gsap.timeline({ scrollTrigger: { trigger: '#conceito', start: 'top top', end: 'bottom bottom', scrub: .7,
+  onUpdate: s => { const p = s.progress; passosC.forEach((el, i) => el.classList.toggle('on', i === (p < .3 ? 0 : p < .7 ? 1 : 2))); } } });
+ct.from(lrot[0], { scale: .6, opacity: 0, duration: 1 })
+  .to({}, { duration: .6 });
+[1, 2, 3].forEach(i => {
+  ct.set(lrot[i], { opacity: 1 }, '>')
+    .fromTo(lrot[i], { rotation: (i - 1) * 90 }, { rotation: i * 90, duration: 1, ease: 'power2.inOut' }, '<')
+    .to(angulo, { a: i * 90, duration: 1, ease: 'power2.inOut', onUpdate: () => grau.textContent = Math.round(angulo.a) + '°' }, '<');
+});
+ct.to({}, { duration: .5 })
+  .to('#fundo-escuro', { clipPath: 'circle(75% at 50% 50%)', duration: 1.4, ease: 'power2.inOut' })
+  .to(lrot, { opacity: 0, duration: .8 }, '<.4')
+  .to('#flor-c', { opacity: 1, duration: .8 }, '<')
+  .to('#gira', { rotation: 45, duration: 1.6, ease: 'power2.inOut' }, '<')
+  .to(grau, { opacity: 0, duration: .4 }, '<')
+  .to('#gira', { rotation: 0, duration: 1.2, ease: 'power2.inOut' })
+  .to({}, { duration: .4 });
+
+/* ====== 02 · MARCA: construção com linhas guia ====== */
+const cons = document.getElementById('construcao');
+cons.innerHTML = logoPartes().replace('viewBox="70 110 950 590"', 'viewBox="20 70 1050 680"').replace('<g class="g-flor">', '<g id="guias"></g><g class="g-flor">');
+const svgC = cons.querySelector('svg');
+const guias = svgC.querySelector('#guias');
+const F = svgC.querySelector('.g-flor').getBBox(), N = svgC.querySelector('.g-nome').getBBox(), C = svgC.querySelector('.g-clinic').getBBox();
+function linha(x1, y1, x2, y2, cls = 'guia') { const l = document.createElementNS(NS, 'line'); Object.entries({ x1, y1, x2, y2 }).forEach(([k, v]) => l.setAttribute(k, v)); l.setAttribute('class', cls); guias.appendChild(l); return l; }
+function circ(cx, cy, r, cls = 'guia-c') { const c = document.createElementNS(NS, 'circle'); c.setAttribute('cx', cx); c.setAttribute('cy', cy); c.setAttribute('r', r); c.setAttribute('class', cls); guias.appendChild(c); return c; }
+function cota(txt, x, y, anchor = 'start') { const t = document.createElementNS(NS, 'text'); t.textContent = txt; t.setAttribute('x', x); t.setAttribute('y', y); t.setAttribute('class', 'cota'); t.setAttribute('text-anchor', anchor); guias.appendChild(t); return t; }
+const cx = F.x + F.width / 2, cy = F.y + F.height / 2;
+const m0 = [linha(cx, 80, cx, 740), circ(cx, cy, F.width / 2 + 4), linha(F.x, F.y, F.x + F.width, F.y + F.height, 'guia'), linha(F.x + F.width, F.y, F.x, F.y + F.height, 'guia'), cota('FLOR · 4 × L', F.x + F.width + 22, cy + 4)];
+const m1 = [linha(30, N.y, 1060, N.y), linha(30, N.y + N.height, 1060, N.y + N.height), linha(N.x, N.y - 20, N.x, N.y + N.height + 20, 'guia-c'), linha(N.x + N.width, N.y - 20, N.x + N.width, N.y + N.height + 20, 'guia-c'), cota('NOME · SERIFA', 30, N.y - 10)];
+const m2 = [linha(C.x, C.y + C.height + 8, C.x + C.width, C.y + C.height + 8, 'guia-c'), linha(C.x - 30, C.y + C.height / 2, C.x - 6, C.y + C.height / 2, 'guia-c'), linha(C.x + C.width + 6, C.y + C.height / 2, C.x + C.width + 30, C.y + C.height / 2, 'guia-c'), cota('DESCRITOR · GRANDIS', cx, C.y + C.height + 40, 'middle')];
+const tracos = [...guias.querySelectorAll('line,circle')];
+tracos.forEach(l => { const len = l.getTotalLength ? l.getTotalLength() : 1000; l.style.strokeDasharray = len; l.style.strokeDashoffset = len; });
+gsap.set(guias.querySelectorAll('text'), { opacity: 0 });
+const gFlor = svgC.querySelector('.g-flor'), gNome = svgC.querySelector('.g-nome'), gClin = svgC.querySelector('.g-clinic');
+gsap.set([gFlor, gNome, gClin], { opacity: .1 });
+const so = (arr, tag) => arr.filter(x => tag ? x.tagName === tag : x.tagName !== 'text');
+const passosM = document.querySelectorAll('#passos-m .passo');
+gsap.timeline({ scrollTrigger: { trigger: '#marca', start: 'top top', end: 'bottom bottom', scrub: .7,
+  onUpdate: s => { const p = s.progress; passosM.forEach((el, i) => el.classList.toggle('on', i === (p < .36 ? 0 : p < .68 ? 1 : 2))); } } })
+  .to(so(m0), { strokeDashoffset: 0, duration: 1, stagger: .15 })
+  .to(so(m0, 'text'), { opacity: 1, duration: .3 }, '<.4')
+  .to(gFlor, { opacity: 1, duration: .6 }, '<')
+  .to(so(m1), { strokeDashoffset: 0, duration: 1, stagger: .15 }, '+=.3')
+  .to(so(m1, 'text'), { opacity: 1, duration: .3 }, '<.4')
+  .to(gNome, { opacity: 1, duration: .6 }, '<')
+  .to(so(m2), { strokeDashoffset: 0, duration: .8, stagger: .15 }, '+=.3')
+  .to(so(m2, 'text'), { opacity: 1, duration: .3 }, '<.3')
+  .to(gClin, { opacity: 1, duration: .6 }, '<')
+  .to(guias, { opacity: .3, duration: .6 }, '+=.3');
+
+/* ====== 03 · VERSÕES: as células se abrem de baixo para cima ====== */
+gsap.to('#grade .cell', { clipPath: 'inset(0% 0 0 0)', ease: 'power2.out', stagger: .12,
+  scrollTrigger: { trigger: '#grade', start: 'top 88%', end: 'top 25%', scrub: .7 } });
+
+/* ====== 04 · ASSINATURAS ====== */
+gsap.from('.tile', { scrollTrigger: { trigger: '.assin-grid', start: 'top 85%' }, y: 60, opacity: 0, stagger: .12, duration: .9, ease: 'power3.out' });
+gsap.from('#reducoes figure', { scrollTrigger: { trigger: '#reducoes', start: 'top 85%' }, scale: 1.6, opacity: 0, transformOrigin: '50% 100%', stagger: .1, duration: .8, ease: 'power3.out' });
+const box = document.querySelector('#area .box');
+gsap.timeline({ scrollTrigger: { trigger: '#area', start: 'top 80%', end: 'top 35%', scrub: .7 } })
+  .from('#area .moldura', { inset: '38px', opacity: 0, ease: 'power2.out' })
+  .from('#area .respiro', { opacity: 0 }, '<')
+  .from('#area .pet', { scale: 0, rotation: -90, transformOrigin: '50% 50%' }, '<.2');
+
+/* ====== 05 · CORES: cartões que sobem e se empilham ====== */
+const cartoes = gsap.utils.toArray('.cartao');
+const pt = gsap.timeline({ scrollTrigger: { trigger: '#pilha', start: 'top top', end: 'bottom bottom', scrub: .7 } });
+cartoes.forEach((c, i) => {
+  if (i === 0) { pt.from(c, { y: () => innerHeight * .6, opacity: 0, duration: 1, ease: 'power3.out' }); return; }
+  pt.from(c, { y: () => innerHeight, duration: 1, ease: 'power3.out' }, '+=.15')
+    .to(cartoes.slice(0, i), { scale: k => 1 - (i - k) * .025, duration: 1, ease: 'power3.out' }, '<');
+});
+pt.to({}, { duration: .5 });
+gsap.to('#apoio .cor', { clipPath: 'inset(0% 0 0 0 round 8px)', stagger: .1, ease: 'power2.out', scrollTrigger: { trigger: '#apoio', start: 'top 90%', end: 'top 55%', scrub: .6 } });
+gsap.from('#prop i', { scaleX: 0, stagger: .1, ease: 'power2.out', scrollTrigger: { trigger: '#prop', start: 'top 95%', end: 'top 70%', scrub: .6 } });
+const toast = document.getElementById('toast');
+document.querySelectorAll('[data-hex]').forEach(c => c.addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(c.dataset.hex); } catch (e) {}
+  toast.textContent = c.dataset.hex + ' copiado'; toast.classList.add('on'); clearTimeout(toast._t); toast._t = setTimeout(() => toast.classList.remove('on'), 1600);
+}));
+
+/* ====== 06 · TIPOGRAFIA: guias → contorno → tinta subindo ====== */
+const cv = document.createElement('canvas').getContext('2d');
+cv.font = '400 300px "Addington CF"';
+const capH = cv.measureText('A').actualBoundingBoxAscent;
+const xH = cv.measureText('x').actualBoundingBoxAscent;
+const desc = cv.measureText('p').actualBoundingBoxDescent;
+const larg = cv.measureText('Aa').width;
+const BASE = 330, X0 = 70;
+const gA = document.getElementById('guiasA');
+const linhaA = (y, txt) => { const l = document.createElementNS(NS, 'line'); l.setAttribute('x1', 0); l.setAttribute('x2', 640); l.setAttribute('y1', y); l.setAttribute('y2', y); l.setAttribute('class', 'guia'); gA.appendChild(l);
+  const t = document.createElementNS(NS, 'text'); t.textContent = txt; t.setAttribute('x', 640); t.setAttribute('y', y - 7); t.setAttribute('text-anchor', 'end'); t.setAttribute('class', 'cota'); gA.appendChild(t); return [l, t]; };
+const gl = [linhaA(BASE - capH, 'ALTURA DAS MAIÚSCULAS'), linhaA(BASE - xH, 'ALTURA-X'), linhaA(BASE, 'LINHA DE BASE'), linhaA(BASE + desc, 'DESCENDENTE')];
+const vert = document.createElementNS(NS, 'line'); [['x1', X0], ['x2', X0], ['y1', 20], ['y2', 420]].forEach(([k, v]) => vert.setAttribute(k, v)); vert.setAttribute('class', 'guia-c'); gA.appendChild(vert);
+const vert2 = vert.cloneNode(); vert2.setAttribute('x1', X0 + larg); vert2.setAttribute('x2', X0 + larg); gA.appendChild(vert2);
+const linhasA = [...gA.querySelectorAll('line')];
+linhasA.forEach(l => { const len = l.getTotalLength(); l.style.strokeDasharray = len; l.style.strokeDashoffset = len; });
+gsap.set(gA.querySelectorAll('text'), { opacity: 0 });
+const contorno = document.getElementById('aa-contorno');
+contorno.style.strokeDasharray = 1800; contorno.style.strokeDashoffset = 1800;
+// pontos de construção nos cantos da caixa da letra
+const gP = document.getElementById('pontosA');
+[[X0, BASE], [X0, BASE - capH], [X0 + larg, BASE], [X0 + larg, BASE - xH], [X0 + larg * .36, BASE - capH]].forEach(([x, y]) => { const c = document.createElementNS(NS, 'circle'); c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 5); c.setAttribute('class', 'ponto'); gP.appendChild(c); });
+gsap.set(gP.children, { scale: 0, transformOrigin: '50% 50%' });
+const fase = document.getElementById('fase');
+const fases = ['as linhas da letra', 'o desenho do traço', 'a tinta', 'Addington CF'];
+gsap.timeline({ scrollTrigger: { trigger: '#letra', start: 'top top', end: 'bottom bottom', scrub: .8,
+  onUpdate: s => { const p = s.progress; fase.textContent = fases[p < .28 ? 0 : p < .62 ? 1 : p < .9 ? 2 : 3]; } } })
+  .to(linhasA, { strokeDashoffset: 0, stagger: .15, duration: .8 })
+  .to(gA.querySelectorAll('text'), { opacity: 1, stagger: .1, duration: .3 }, '<.3')
+  .to(gP.children, { scale: 1, stagger: .08, duration: .4, ease: 'back.out(2)' }, '<.3')
+  .to(contorno, { strokeDashoffset: 0, duration: 2.4, ease: 'none' })
+  .to('#tinta-rect', { attr: { y: 0 }, duration: 1.6, ease: 'power1.inOut' })
+  .to(gP.children, { scale: 0, duration: .4 }, '<.4')
+  .to(linhasA, { opacity: .35, duration: .4 }, '<')
+  .to({}, { duration: .4 });
+gsap.from('.familias .col', { scrollTrigger: { trigger: '.familias', start: 'top 85%' }, y: 50, opacity: 0, stagger: .12, duration: .9, ease: 'power3.out' });
+const frase = document.getElementById('frase');
+document.querySelectorAll('#opcoes button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('#opcoes button').forEach(x => x.classList.remove('on')); b.classList.add('on');
+  frase.style.fontFamily = b.dataset.f === 'serif' ? 'var(--serif)' : 'var(--sans)';
+  frase.style.fontWeight = b.dataset.w; frase.style.fontStyle = b.dataset.i ? 'italic' : 'normal';
+}));
+
+/* ====== 07 · PADRÃO: as flores brotam e giram ====== */
+const TIPOS = {
+  g: { passo: 120, itens: [[18, 18, 44, 'icone', '#D7A994']] , ponto: '#B57D67' },
+  t: { passo: 120, itens: [[18, 18, 44, 'icone', '#B57D67'], [78, 78, 24, 'icone', '#D7A994']] },
+  n: { passo: 96, itens: [[22, 22, 52, 'lform', '#F6F0EA']], gira: 45 }
+};
+document.querySelectorAll('.pad').forEach(pad => {
+  const T = TIPOS[pad.dataset.tipo], campo = pad.querySelector('.campo');
+  if (T.gira) campo.style.inset = '-40%';
+  const w = campo.clientWidth + T.passo, h = campo.clientHeight + T.passo;
+  let html = '';
+  for (let y = -T.passo / 2; y < h; y += T.passo) for (let x = -T.passo / 2; x < w; x += T.passo) {
+    T.itens.forEach(([dx, dy, s, sym, cor]) => { html += `<svg class="fl" style="left:${x + dx}px;top:${y + dy}px;width:${s}px;height:${s}px;color:${cor}" aria-hidden="true"><use href="#${sym}"/></svg>`; });
+    if (T.ponto) html += `<svg class="fl" style="left:${x + 88}px;top:${y + 88}px;width:5px;height:5px" viewBox="0 0 5 5" aria-hidden="true"><circle cx="2.5" cy="2.5" r="2.4" fill="${T.ponto}"/></svg>`;
+  }
+  campo.innerHTML = html;
+  if (T.gira) campo.style.transform = `rotate(${T.gira}deg)`;
+  const fl = campo.querySelectorAll('.fl');
+  gsap.timeline({ scrollTrigger: { trigger: pad, start: 'top 90%', end: 'bottom 30%', scrub: .8 } })
+    .from(fl, { scale: 0, rotation: -120, transformOrigin: '50% 50%', ease: 'power2.out', duration: 1,
+      stagger: { each: .02, from: 'center', grid: 'auto' } })
+    .to(fl, { rotation: 90, ease: 'none', duration: 1.4 });
+});
+
+/* ====== 08 · TOM ====== */
+gsap.to('#huge', { rotation: 45, transformOrigin: '50% 50%', ease: 'none', scrollTrigger: { trigger: '#tom', start: 'top bottom', end: 'bottom top', scrub: 1 } });
+gsap.from('#seal', { scale: 0, ease: 'back.out(1.8)', duration: .9, scrollTrigger: { trigger: '#seal', start: 'top 90%' } });
+const ft = document.getElementById('frase-tom');
+ft.innerHTML = ft.innerHTML.replace(/(<[^>]+>)|([^\s<]+)/g, (m, tag, pal) => tag ? tag : `<span class="pal">${pal}</span>`);
+gsap.to('#frase-tom .pal', { opacity: 1, stagger: .2, ease: 'none', scrollTrigger: { trigger: '#frase-tom', start: 'top 85%', end: 'top 45%', scrub: .6 } });
+gsap.from('.frases > div', { scrollTrigger: { trigger: '.frases', start: 'top 88%' }, y: 40, opacity: 0, stagger: .12, duration: .8, ease: 'power3.out' });
+
+/* ====== 09 · APLICAÇÕES ====== */
+const giros = [-4, 3, -2];
+gsap.fromTo('#cartoes .card', { x: (i) => (1 - i) * (mobile ? 0 : 200), y: 80, rotation: 0, rotationY: i => i === 0 ? 0 : 180, opacity: 0 },
+  { x: 0, y: 0, rotation: i => giros[i], rotationY: 0, opacity: 1, ease: 'power2.out', stagger: .12,
+    scrollTrigger: { trigger: '#cartoes', start: 'top 85%', end: 'top 35%', scrub: .7 } });
+gsap.to('#luz', { x: '80%', ease: 'none', scrollTrigger: { trigger: '#parede', start: 'top 85%', end: 'bottom 20%', scrub: .8 } });
+
+if (!mobile) {
+  const trilho = document.getElementById('trilho');
+  const dist = () => trilho.scrollWidth - innerWidth;
+  gsap.to(trilho, { x: () => -dist(), ease: 'none',
+    scrollTrigger: { trigger: '#posts-pin', start: 'top top', end: () => '+=' + dist(), pin: true, scrub: .6, invalidateOnRefresh: true, anticipatePin: 1 } });
+} else {
+  gsap.utils.toArray('.painel').forEach(p => gsap.from(p, { scrollTrigger: { trigger: p, start: 'top 88%' }, y: 60, opacity: 0, duration: .8, ease: 'power3.out' }));
+}
+
+/* ====== 10 · SITE ====== */
+gsap.from('#browser', { y: 140, rotateX: 14, transformPerspective: 1200, opacity: .3, ease: 'power2.out',
+  scrollTrigger: { trigger: '#browser', start: 'top 95%', end: 'top 35%', scrub: .7 } });
+gsap.from('#agenda', { y: 60, opacity: 0, duration: .9, ease: 'power3.out', scrollTrigger: { trigger: '#agenda', start: 'top 85%' } });
+gsap.from('#fluxo > div', { y: 40, opacity: 0, stagger: .12, duration: .7, ease: 'power3.out', scrollTrigger: { trigger: '#fluxo', start: 'top 90%' } });
+(function agenda() {
+  const sem = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SÁB'];
+  const dias = document.getElementById('dias'), servs = document.getElementById('servs'), horas = document.getElementById('horas'), wa = document.getElementById('wa'), msg = document.getElementById('wamsg');
+  const st = { dia: 17, serv: null, hora: null };
+  const marca = (pai, el) => { [...pai.children].forEach(x => x.classList.remove('on')); el.classList.add('on'); };
+  for (let d = 15; d <= 21; d++) {
+    const dt = new Date(2026, 10, d), b = document.createElement('button'); b.className = 'dia' + (d === st.dia ? ' on' : '');
+    b.innerHTML = sem[dt.getDay()] + '<b>' + d + '</b>'; if (dt.getDay() === 0) b.disabled = true;
+    b.onclick = () => { st.dia = d; marca(dias, b); up(); }; dias.appendChild(b);
+  }
+  [['Limpeza de pele', '60 min'], ['Cílios', '90 min'], ['Unhas', '60 min']].forEach(s => {
+    const b = document.createElement('button'); b.className = 'serv';
+    b.innerHTML = `<span class="ico"><svg><use href="#icone"/></svg></span><span><b>${s[0]}</b><small>${s[1]}</small></span>`;
+    b.onclick = () => { st.serv = s[0]; marca(servs, b); up(); }; servs.appendChild(b);
+  });
+  ['9:00', '10:30', '13:00', '14:30', '16:00', '18:00'].forEach(h => {
+    const b = document.createElement('button'); b.className = 'hora'; b.textContent = h;
+    b.onclick = () => { st.hora = h; marca(horas, b); up(); }; horas.appendChild(b);
+  });
+  function up() {
+    if (st.serv && st.hora) {
+      const t = `Olá! Gostaria de agendar ${st.serv.toLowerCase()} no dia ${st.dia}/11, às ${st.hora}.`;
+      wa.href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(t); wa.target = '_blank'; wa.rel = 'noopener';
+      msg.textContent = '“' + t + '”';
+    } else { wa.href = '#agenda'; wa.removeAttribute('target'); msg.textContent = 'Escolha cuidado e horário'; }
+  }
+})();
+
+/* ====== FIM: a flor se monta de novo ====== */
+const fimF = document.getElementById('flor-fim');
+fimF.innerHTML = `<svg viewBox="425 120 235 235" aria-hidden="true">${PET.map(d => `<path fill="currentColor" d="${d}"/>`).join('')}</svg>`;
+gsap.from(fimF.querySelectorAll('path'), { scale: 0, rotation: -180, transformOrigin: '50% 50%', opacity: 0, stagger: .12, duration: 1.2, ease: 'power3.out',
+  scrollTrigger: { trigger: '#fim', start: 'top 65%' } });
+// "Obrigado." digitado letra a letra, como máquina de escrever
+const digita = document.getElementById('digita'), PALAVRA = 'Obrigado.';
+if (reduz) digita.textContent = PALAVRA;
+else ScrollTrigger.create({ trigger: '#fim', start: 'top 55%', once: true, onEnter: () => {
+  let i = 0;
+  setTimeout(function tecla() {
+    digita.textContent = PALAVRA.slice(0, ++i);
+    if (i < PALAVRA.length) setTimeout(tecla, 110 + Math.random() * 90);
+  }, 700);
+} });
+gsap.from('#fim .assin', { scrollTrigger: { trigger: '#fim', start: 'top 55%' }, y: 30, opacity: 0, duration: 1, delay: 2, ease: 'power3.out' });
+
+navAtiva(); // depois dos pins, para as posições já contarem o espaço deles
+if (reduz) ScrollTrigger.getAll().forEach(st => st.animation && st.animation.progress(1));
+ScrollTrigger.refresh();
+})();
+</script>
+</body>
+</html>
